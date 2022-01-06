@@ -51,9 +51,9 @@
 
     <properties>
         <liquibase.base.version>4.3.5</liquibase.base.version>
-        <liquibase.version.qualifier>-local</liquibase.version.qualifier>
+        <liquibase.version.qualifier>-kylin</liquibase.version.qualifier>
         <liquibase.version.snapshot>-SNAPSHOT</liquibase.version.snapshot>
-        <liquibase.version>${liquibase.base.version}${liquibase.version.qualifier}${liquibase.version.snapshot}
+        <liquibase.version>${liquibase.base.version}${liquibase.version.qualifier}
         </liquibase.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
