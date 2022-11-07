@@ -68,7 +68,7 @@
 	</fileSets>
 	<files>
         <file>
-            <source>${project.build.directory}/liquibase-0-SNAPSHOT.jar</source>
+            <source>${project.build.directory}/liquibase-4.17.0-kylin.jar</source>
             <destName>internal/lib/liquibase-core.jar</destName>
             <fileMode>0644</fileMode>
         </file>
