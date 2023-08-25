@@ -31,9 +31,9 @@ public class CreateDatabaseChangeLogTableGenerator extends AbstractSqlGenerator<
         String dateTimeTypeString = getDateTimeTypeString(database);
         CreateTableStatement createTableStatement = new CreateTableStatement(database.getLiquibaseCatalogName(), database.getLiquibaseSchemaName(), database.getDatabaseChangeLogTableName())
                 .setTablespace(database.getLiquibaseTablespaceName())
-                .addColumn("ID", DataTypeFactory.getInstance().fromDescription(charTypeName + "(" + getIdColumnSize() + ")", database), null, null, new NotNullConstraint())
-                .addColumn("AUTHOR", DataTypeFactory.getInstance().fromDescription(charTypeName + "(" + getAuthorColumnSize() + ")", database), null, null, new NotNullConstraint())
-                .addColumn("FILENAME", DataTypeFactory.getInstance().fromDescription(charTypeName + "(" + getFilenameColumnSize() + ")", database), null, null, new NotNullConstraint())
+                .addPrimaryKeyColumn("ID", DataTypeFactory.getInstance().fromDescription(charTypeName + "(" + getIdColumnSize() + ")", database), null, null, null, new NotNullConstraint())
+                .addPrimaryKeyColumn("AUTHOR", DataTypeFactory.getInstance().fromDescription(charTypeName + "(" + getAuthorColumnSize() + ")", database), null, null, null, new NotNullConstraint())
+                .addPrimaryKeyColumn("FILENAME", DataTypeFactory.getInstance().fromDescription(charTypeName + "(" + getFilenameColumnSize() + ")", database), null, null, null, new NotNullConstraint())
                 .addColumn("DATEEXECUTED", DataTypeFactory.getInstance().fromDescription(dateTimeTypeString, database), null, null, new NotNullConstraint())
                 .addColumn("ORDEREXECUTED", DataTypeFactory.getInstance().fromDescription("int", database), null, null, new NotNullConstraint())
                 .addColumn("EXECTYPE", DataTypeFactory.getInstance().fromDescription(charTypeName + "(10)", database), null, null, new NotNullConstraint())
